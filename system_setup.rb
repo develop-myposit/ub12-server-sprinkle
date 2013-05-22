@@ -12,8 +12,8 @@ require 'packages/ssh'
 # require 'packages/nginx'
 # require 'packages/unicorn'
 require 'packages/app'
-require 'packages/ruby_install'
-require 'packages/node'
+# require 'packages/ruby_install'
+# require 'packages/node'
 require 'packages/app'
 
 ASSETS_PATH = File.join(File.dirname(__FILE__), 'assets')
@@ -23,9 +23,9 @@ policy :stack, :roles => :app do
   requires :tools
   requires :host
   requires :deployer
-  requires :node
+#  requires :node
   requires :scm
-  requires :ruby              # Install ruby
+# requires :ruby              # Install ruby
 #  requires :database
 #  requires :webserver
   requires :ssh                # TODO: turn this on once policy is good.  It'll disable root login so make sure everything is good!
